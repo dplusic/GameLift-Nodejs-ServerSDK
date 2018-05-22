@@ -6,7 +6,8 @@
   "typings": "dist/types/gamelift-nodejs-serversdk.d.ts",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
-    "build": "tsc"
+    "prebuild": "rimraf dist",
+    "build": "tsc && cpx src/Google/Sdk.js dist/lib/Google/ && cpx src/Google/Sdk.d.ts dist/types/Google/"
   },
   "repository": {
     "type": "git",
@@ -26,11 +27,26 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@types/debug": "0.0.30",
     "@types/node": "^10.1.2",
+    "@types/p-defer": "^1.0.0",
+    "@types/p-timeout": "^1.2.0",
+    "@types/socket.io-client": "^1.4.32",
+    "cpx": "^1.5.0",
     "prettier": "^1.12.1",
+    "rimraf": "^2.6.2",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.12.0",
     "tslint-config-standard": "^7.0.0",
     "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "long": "^4.0.0",
+    "p-defer": "^1.0.0",
+    "p-timeout": "^2.0.1",
+    "protobufjs": "^6.8.6",
+    "sleep-promise": "^6.0.0",
+    "socket.io-client": "^2.1.1"
   }
 }

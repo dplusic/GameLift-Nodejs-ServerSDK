@@ -2,5 +2,13 @@
   "extends": [
     "tslint-config-standard",
     "tslint-config-prettier"
-  ]
+  ],
+  "rules": {
+    "unified-signatures": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "src/**/*.d.ts"
+    ]
+  }
 }
