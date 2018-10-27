@@ -42,7 +42,7 @@ export class AuxProxyMessageSender {
   }
 
   CreateAckFunctionForStartMatchBackfill(
-    deferred: any /* pDefer.DeferredPromise<StartMatchBackfillOutcome> */
+    deferred: pDefer.DeferredPromise<StartMatchBackfillOutcome>
   ): (ack: boolean, response: string) => void {
     return (ack, response) => {
       AuxProxyMessageSender.debug(`Got ack ${ack} with response ${response}`)
@@ -73,7 +73,7 @@ export class AuxProxyMessageSender {
   }
 
   CreateAckFunctionForDescribePlayerSessions(
-    deferred: any /* pDefer.DeferredPromise<DescribePlayerSessionsOutcome> */
+    deferred: pDefer.DeferredPromise<DescribePlayerSessionsOutcome>
   ): (ack: boolean, response: string) => void {
     return (ack, response) => {
       AuxProxyMessageSender.debug(`Got ack ${ack} with response ${response}`)
@@ -230,7 +230,7 @@ export class AuxProxyMessageSender {
   }
 
   CreateAckFunctionGeneric(
-    deferred: any /* pDefer.DeferredPromise<GenericOutcome> */
+    deferred: pDefer.DeferredPromise<GenericOutcome>
   ): (ack: boolean) => void {
     return ack => {
       AuxProxyMessageSender.debug(`Got ack ${ack}`)
@@ -263,7 +263,7 @@ export class AuxProxyMessageSender {
   async EmitEvent<T extends GenericOutcome>(
     message: any,
     ackFunction: (...args: any[]) => void,
-    deferred: any /* pDefer.DeferredPromise<T> */,
+    deferred: pDefer.DeferredPromise<T>,
     error: T
   ): Promise<T> {
     AuxProxyMessageSender.debug(`Emitting event for message ${JSON.stringify(message.toJSON())}`)

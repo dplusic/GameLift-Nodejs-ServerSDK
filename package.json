@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/debug": "0.0.30",
     "@types/node": "^10.1.2",
-    "@types/p-defer": "^1.0.0",
+    "@types/p-defer": "^1.0.2",
     "@types/p-timeout": "^1.2.0",
     "@types/socket.io-client": "^1.4.32",
     "cpx": "^1.5.0",

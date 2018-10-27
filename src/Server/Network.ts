@@ -12,7 +12,7 @@ export class Network {
   socketToAuxProxy: Socket
   socketFromAuxProxy: Socket
   handler: IAuxProxyMessageHandler
-  connected?: any /* pDefer.DeferredPromise<boolean> */
+  connected?: pDefer.DeferredPromise<boolean>
 
   constructor(
     socketToAuxProxy: Socket,
