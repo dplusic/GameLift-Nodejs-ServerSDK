@@ -5,7 +5,7 @@
   "main": "dist/lib/gamelift-nodejs-serversdk.js",
   "typings": "dist/types/gamelift-nodejs-serversdk.d.ts",
   "scripts": {
-    "lint": "tslint 'src/**/*.ts'",
+    "lint": "tslint --project tsconfig.json 'src/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc && cpx src/Google/Sdk.js dist/lib/Google/ && cpx src/Google/Sdk.d.ts dist/types/Google/"
   },
